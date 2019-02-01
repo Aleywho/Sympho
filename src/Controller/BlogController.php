@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use Doctrine\Common\Persistence\ObjectManager;
+use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Article;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
@@ -22,7 +25,7 @@ class BlogController extends AbstractController
      */
 public function home()
 {
-    return $this->render('blog/home.html.twig');
+    return $this->render('blog/home.html.twig',['title' => "bienvenue sur la billeterie"]);
 }
 
     /**
@@ -31,5 +34,13 @@ public function home()
 
 public function show(){
     return $this->render('blog/show.html.twig');
+}
+
+    /**
+     * @Route ("/blog/new", name = "blog_create")
+     */
+public function create(){
+
+    return $this->render('blog/create.html.twig');
 }
 }
