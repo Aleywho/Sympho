@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a55c8aad-e563-4453-bb1d-661cc53a9749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Billet.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Visiteurs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BilletRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/VisiteursRepository.php" beforeDir="false" />
-    </list>
+    <list default="true" id="a55c8aad-e563-4453-bb1d-661cc53a9749" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +31,7 @@
         <counts>
           <entry key="PHP" value="23" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Twig" value="6" />
+          <entry key="Twig" value="7" />
           <entry key="YAML" value="6" />
         </counts>
       </usages-collector>
@@ -67,6 +61,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/blog/create.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,10 +79,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
+            <state relative-caret-position="468">
               <caret line="109" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
@@ -138,11 +141,11 @@
         <option value="$PROJECT_DIR$/templates/blog/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/blog/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/blog/home.html.twig" />
-        <option value="$PROJECT_DIR$/templates/blog/create.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/BlogController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Entity/Billet.php" />
+        <option value="$PROJECT_DIR$/templates/blog/create.html.twig" />
       </list>
     </option>
   </component>
@@ -258,7 +261,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="233" />
     <option name="y" value="27" />
     <option name="width" value="1238" />
@@ -387,17 +390,17 @@
       <workItem from="1549014988206" duration="3961000" />
       <workItem from="1549362082773" duration="1231000" />
       <workItem from="1549372884481" duration="599000" />
-      <workItem from="1549618545238" duration="7029000" />
+      <workItem from="1549618545238" duration="7525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39523000" />
+    <option name="totallyTimeSpent" value="40019000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="233" y="27" width="1238" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.4804754" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.30170575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50161815" side_tool="true" weight="0.30170575" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -410,7 +413,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33296824" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -470,13 +473,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../composer-setup.php" />
-    <entry file="file://$PROJECT_DIR$/templates/blog/create.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -537,13 +533,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/BilletRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Billet.php">
+    <entry file="file://$PROJECT_DIR$/templates/blog/create.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
