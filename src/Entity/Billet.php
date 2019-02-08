@@ -17,9 +17,25 @@ class Billet
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Nom;
+
+    /**
      * @ORM\Column(type="date")
      */
-    private $date;
+    private $datedenaissance;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="billets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $visiteur;
 
     /**
      * @ORM\Column(type="float")
@@ -31,14 +47,50 @@ class Billet
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getPrenom(): ?string
     {
-        return $this->date;
+        return $this->prenom;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setPrenom(string $prenom): self
     {
-        $this->date = $date;
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->Nom;
+    }
+
+    public function setNom(string $Nom): self
+    {
+        $this->Nom = $Nom;
+
+        return $this;
+    }
+
+    public function getDatedenaissance(): ?\DateTimeInterface
+    {
+        return $this->datedenaissance;
+    }
+
+    public function setDatedenaissance(\DateTimeInterface $datedenaissance): self
+    {
+        $this->datedenaissance = $datedenaissance;
+
+        return $this;
+    }
+
+    public function getVisiteur(): ?Visiteur
+    {
+        return $this->visiteur;
+    }
+
+    public function setVisiteur(?Visiteur $visiteur): self
+    {
+        $this->visiteur = $visiteur;
 
         return $this;
     }

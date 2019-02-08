@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Visiteurs;
+use App\Entity\Visiteur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Visiteurs|null find($id, $lockMode = null, $lockVersion = null)
- * @method Visiteurs|null findOneBy(array $criteria, array $orderBy = null)
- * @method Visiteurs[]    findAll()
- * @method Visiteurs[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Visiteur|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Visiteur|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Visiteur[]    findAll()
+ * @method Visiteur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class VisiteursRepository extends ServiceEntityRepository
+class VisiteurRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Visiteurs::class);
+        parent::__construct($registry, Visiteur::class);
     }
 
     // /**
-    //  * @return Visiteurs[] Returns an array of Visiteurs objects
+    //  * @return Visiteur[] Returns an array of Visiteur objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class VisiteursRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Visiteurs
+    public function findOneBySomeField($value): ?Visiteur
     {
         return $this->createQueryBuilder('v')
             ->andWhere('v.exampleField = :val')
