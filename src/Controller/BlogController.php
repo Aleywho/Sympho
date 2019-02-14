@@ -3,10 +3,16 @@
 namespace App\Controller;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use http\Env\Request;
+use function Sodium\add;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Article;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Billet;
+use App\Repository\BilletRepository;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class BlogController extends AbstractController
 {
@@ -23,24 +29,42 @@ class BlogController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-public function home()
-{
-    return $this->render('blog/home.html.twig',['title' => "bienvenue sur la billeterie"]);
-}
-
-    /**
-     * @route("/blog/article/12", name="blog_show")
-     */
-
-public function show(){
-    return $this->render('blog/show.html.twig');
-}
+    public function home()
+    {
+        return $this->render('blog/home.html.twig', ['title' => "bienvenue sur la billeterie"]);
+    }
 
     /**
      * @Route ("/blog/new", name = "blog_create")
      */
-public function create(){
+    public function create(Request $request, ObjectManager $manager )
+    {
+        $billet = new Billet();
+        $form = $this->createFormBuilder($billet)
+            ->add('prenom', TextType::class, [
+                'attr' =>[
+                    'placeholder'=>"Votre prénom"
+                ]
+            ])
+            ->add('nom', TextType::class, [
+                'attr' =>[
+                    'placeholder'=>"Votre nom"
+            ]
+                ])
+            ->add('datedenaissance', DateType::class)
+            ->add('Envoyer', SubmitType::class)
+            ->getForm();
+        return $this->render('blog/create.html.twig', [
+            'formBillet' => $form->createView()
+        ]);
+    }
+    /**
+     * @route("/blog/article/12", name="blog_show")
+     */
 
-    return $this->render('blog/create.html.twig');
-}
+    public function show()
+    {
+        return $this->render('blog/show.html.twig');
+    }
+
 }
