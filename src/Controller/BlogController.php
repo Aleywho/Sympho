@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\BilletType;
 use Doctrine\Common\Persistence\ObjectManager;
 use function Sodium\add;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,20 +41,7 @@ class BlogController extends AbstractController
     public function create(Request $request, ObjectManager $manager )
     {
         $billet = new Billet();
-        $form = $this->createFormBuilder($billet)
-            ->add('prenom', TextType::class, [
-                'attr' =>[
-                    'placeholder'=>"Votre prénom"
-                ]
-            ])
-            ->add('nom', TextType::class, [
-                'attr' =>[
-                    'placeholder'=>"Votre nom"
-            ]
-                ])
-            ->add('datedenaissance', DateType::class)
-            ->add('Envoyer', SubmitType::class)
-            ->getForm();
+        $form = $this->createForm(BilletType::class);
         return $this->render('blog/create.html.twig', [
             'formBillet' => $form->createView()
         ]);
