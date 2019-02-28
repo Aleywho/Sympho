@@ -48,7 +48,7 @@ class BlogController extends AbstractController
             $manager->persist($billet);
         $manager->flush();
 
-        return $this->redirectToRoute('blog_show',['id' =>$billet->getId()]);
+        return $this->redirectToRoute('blog_show');
             }
         return $this->render('blog/create.html.twig', [
             'formBillet' => $form->createView(),

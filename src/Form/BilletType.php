@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\Billet;
-use App\Entity\Visiteur;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -29,11 +28,14 @@ class BilletType extends AbstractType
                 ]
             ])
             ->add('datedenaissance', DateType::class)
-           ->add('visiteur', CollectionType::class)
+           ->add('visiteur', CollectionType::class, array (
+               'required' => false,
+               'entry_type' => VisiteurType::class,
+               'entry_options' => array('label' => false),
+           ))
 
 
             ->add('Envoyer', SubmitType::class)
-            ->getForm();
 
         ;
     }
