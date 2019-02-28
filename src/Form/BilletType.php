@@ -3,7 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Billet;
-
+use App\Entity\Visiteur;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -11,6 +12,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
 class BilletType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -27,8 +29,12 @@ class BilletType extends AbstractType
                 ]
             ])
             ->add('datedenaissance', DateType::class)
-            ->add('visiteur', CollectionType::class)
+           ->add('visiteur', CollectionType::class)
+
+
             ->add('Envoyer', SubmitType::class)
+            ->getForm();
+
         ;
     }
 

@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Article;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Billet;
+use App\Entity\Visiteur;
 use App\Repository\BilletRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -38,12 +39,20 @@ class BlogController extends AbstractController
     /**
      * @Route ("/blog/new", name = "blog_create")
      */
-    public function create(Request $request, ObjectManager $manager )
+    public function create(Request $request, ObjectManager $manager)
     {
         $billet = new Billet();
         $form = $this->createForm(BilletType::class);
+        $form ->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            $manager->persist($billet);
+        $manager->flush();
+
+        return $this->redirectToRoute('blog_show',['id' =>$billet->getId()]);
+            }
         return $this->render('blog/create.html.twig', [
-            'formBillet' => $form->createView()
+            'formBillet' => $form->createView(),
+
         ]);
     }
     /**
