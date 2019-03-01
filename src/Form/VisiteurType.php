@@ -11,6 +11,8 @@ use App\Entity\Billet;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+
 class VisiteurType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
@@ -32,7 +34,10 @@ class VisiteurType extends AbstractType
                 ]
             ])
             ->add('total')
-            ->add('nbBillet')
+            ->add('nbBillet', CollectionType::class, array (
+                'entry_type' => BilletType::class,
+                'entry_options' => array('label' => false),
+            ))
         ->add('Envoyer', SubmitType::class)
 
         ;

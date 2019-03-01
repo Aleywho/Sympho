@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\BilletType;
+use App\Form\VisiteurType;
 use Doctrine\Common\Persistence\ObjectManager;
 use function Sodium\add;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,7 +43,7 @@ class BlogController extends AbstractController
     public function create(Request $request, ObjectManager $manager)
     {
         $billet = new Billet();
-        $form = $this->createForm(BilletType::class);
+        $form = $this->createForm(VisiteurType::class);
         $form ->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $manager->persist($billet);
@@ -55,6 +56,7 @@ class BlogController extends AbstractController
 
         ]);
     }
+
     /**
      * @route("/blog/article/12", name="blog_show")
      */

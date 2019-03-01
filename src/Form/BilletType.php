@@ -28,11 +28,8 @@ class BilletType extends AbstractType
                 ]
             ])
             ->add('datedenaissance', DateType::class)
-           ->add('visiteur', CollectionType::class, array (
-               'required' => false,
-               'entry_type' => VisiteurType::class,
-               'entry_options' => array('label' => false),
-           ))
+
+           ->add('visiteur')
 
 
             ->add('Envoyer', SubmitType::class)
