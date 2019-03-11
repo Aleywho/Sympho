@@ -43,7 +43,7 @@ class BlogController extends AbstractController
     public function create(Request $request, ObjectManager $manager)
     {
         $billet = new Billet();
-        $form = $this->createForm(VisiteurType::class);
+        $form = $this->createForm(BilletType::class);
         $form ->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $manager->persist($billet);

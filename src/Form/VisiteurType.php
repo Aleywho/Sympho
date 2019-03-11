@@ -37,6 +37,8 @@ class VisiteurType extends AbstractType
             ->add('nbBillet', CollectionType::class, array (
                 'entry_type' => BilletType::class,
                 'entry_options' => array('label' => false),
+                'allow_add' =>true,
+                'allow_delete' => true,
             ))
         ->add('Envoyer', SubmitType::class)
 
