@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use App\Form\BilletType;
 
 class VisiteurType extends AbstractType
 {
@@ -38,6 +39,7 @@ class VisiteurType extends AbstractType
                 'entry_type' => BilletType::class,
                 'entry_options' => ['label' => false],
                 'allow_add' =>true,
+                'by_reference' => false
             ])
         ->add('Envoyer', SubmitType::class)
 
