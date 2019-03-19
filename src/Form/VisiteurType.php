@@ -35,12 +35,13 @@ class VisiteurType extends AbstractType
                 ]
             ])
             ->add('total')
-            ->add('nbBillet', CollectionType::class, [
+            ->add('nbBillet', CollectionType::class, array(
                 'entry_type' => BilletType::class,
-                'entry_options' => ['label' => false],
+                'entry_options' => array('label' => false),
                 'allow_add' =>true,
                 'by_reference' => false
-            ])
+            ))
+
         ->add('Envoyer', SubmitType::class)
 
         ;

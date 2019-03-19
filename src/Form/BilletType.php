@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Billet;
+
+use App\Entity\Visiteur;
 use Doctrine\DBAL\Types\StringType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -30,9 +32,10 @@ class BilletType extends AbstractType
             ])
             ->add('datedenaissance', DateType::class)
 
-           ->add('visiteur', EntityType::class, [
-               'class' => VisiteurType::class,
-           ])
+           ->add('visiteur', EntityType::class,
+               [
+                   'class'=>Visiteur::class,
+               ])
 
 
             ->add('Envoyer', SubmitType::class)
