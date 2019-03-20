@@ -32,13 +32,7 @@ class BilletType extends AbstractType
             ])
             ->add('datedenaissance', DateType::class)
 
-           ->add('visiteur', EntityType::class,
-               [
-                   'class'=>Visiteur::class,
-               ])
-
-
-            ->add('Envoyer', SubmitType::class)
+           ->add('visiteur')
 
         ;
     }

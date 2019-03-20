@@ -3,9 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet"
-              href="https://bootswatch.com/4/flatly/bootstrap.min.css">
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+            <link rel="stylesheet"
+                  href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+
+        {% endblock %}
 
     </head>
     <body>
@@ -27,9 +30,14 @@
         </div>
     </nav>
     <div class="container">
-        {% block body %}{% endblock %}
+        {% block body %}
+
+        {% endblock %}
     </div>
 
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        {% endblock %}
     </body>
 </html>
