@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\StringType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -31,9 +32,7 @@ class BilletType extends AbstractType
                 ]
             ])
             ->add('datedenaissance', DateType::class)
-
-           ->add('visiteur')
-
+            ->add('prix', MoneyType::class)
         ;
     }
 

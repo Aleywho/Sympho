@@ -44,13 +44,15 @@ class BlogController extends AbstractController
     {
         $billet = new Billet();
         $form = $this->createForm(VisiteurType::class);
-        $form ->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
-            $manager->persist($billet);
-        $manager->flush();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($form->getData());
 
-        return $this->redirectToRoute('blog_show');
-            }
+            $manager->persist($form->getData());
+            $manager->flush();
+
+            return $this->redirectToRoute('blog_show');
+        }
         return $this->render('blog/create.html.twig', [
             'formBillet' => $form->createView(),
 

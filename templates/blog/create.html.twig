@@ -6,15 +6,19 @@
 
     {{ form_start(formBillet) }}
 
-    {{ form_widget (formBillet)}}
+
 
     <h3>Billets</h3>
     <ul class="billet">
         {# iterate over each existing tag and render its only field: name #}
-        {% for billet in formBillet.nbBillet %}
+        {% for billet in formBillet.billets %}
             <li>{{ form_row(billet.prenom) }}</li>
+
+
         {% endfor %}
+
     </ul>
+
     {{ form_end(formBillet) }}
 
 
@@ -27,23 +31,17 @@
      <script >
      var $collectionHolder;
      // setup an "add a tag" link
-     var $addTagButton = $('<button type="button" class="add_tag_link">Add a tag</button>');
+     var $addTagButton = $('<button type="button" class="add_tag_link">Ajouter un billet</button>');
      var $newLinkLi = $('<li></li>').append($addTagButton);
      function addTagForm($collectionHolder, $newLinkLi) {
          // Get the data-prototype explained earlier
-         var prototype = $('#visiteur_nbBillet').data('prototype');
+         var prototype = $('#visiteur_billets').data('prototype');
          console.log(prototype);
          // get the new index
          var index = $collectionHolder.data('index');
 
          var newForm = prototype;
-         // You need this only if you didn't set 'label' => false in your tags field in TaskType
-         // Replace '__name__label__' in the prototype's HTML to
-         // instead be a number based on how many items we have
-         // newForm = newForm.replace(/__name__label__/g, index);
 
-         // Replace '__name__' in the prototype's HTML to
-         // instead be a number based on how many items we have
          newForm = newForm.replace(/__name__/g, index);
 
          // increase the index with one for the next item
@@ -53,8 +51,15 @@
          var $newFormLi = $('<li></li>').append(newForm);
          $newLinkLi.before($newFormLi);
      }
+     $('.js-datepicker').datepicker({
+         format: 'yyyy-mm-dd',
+         language: 'fr-FR',
+         daysOfWeekDisabled:'2',
+         datesDisabled: ''
+     });
      jQuery(document).ready(function() {
      // Get the ul that holds the collection of tags
+
      $collectionHolder = $('ul.billet');
 
      // add the "add a tag" anchor and li to the tags ul

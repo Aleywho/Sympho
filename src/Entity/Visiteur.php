@@ -44,9 +44,15 @@ class Visiteur
     private $nbBillet;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="visiteur", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Billet", mappedBy="visiteur", orphanRemoval=true, cascade={"persist", "remove"})
+     *
      */
     private $billets;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $dateVisit;
 
     public function __construct()
     {
@@ -145,6 +151,18 @@ class Visiteur
                 $billet->setVisiteur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDateVisit(): ?\DateTimeInterface
+    {
+        return $this->dateVisit;
+    }
+
+    public function setDateVisit(\DateTimeInterface $dateVisit): self
+    {
+        $this->dateVisit = $dateVisit;
 
         return $this;
     }

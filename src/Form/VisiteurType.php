@@ -19,7 +19,7 @@ class VisiteurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Prenom', TextType::class, [
+            ->add('prenom', TextType::class, [
                 'attr' =>[
                     'placeholder'=>"Votre prénom"
                 ]
@@ -29,17 +29,24 @@ class VisiteurType extends AbstractType
                     'placeholder'=>"Votre nom"
                 ]
             ])
-            ->add('Email', TextType::class, [
+            ->add('email', TextType::class, [
                 'attr' =>[
                     'placeholder'=>"Votre email"
                 ]
             ])
-            ->add('nbBillet', CollectionType::class, array(
+            ->add('billets', CollectionType::class, array(
                 'entry_type' => BilletType::class,
                 'entry_options' => array('label' => false),
                 'allow_add' =>true,
                 'by_reference' => false,
             ))
+            ->add('dateVisit', DateType::class,[
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+                ])
+            ->add('total')
+
 
         ->add('Envoyer', SubmitType::class)
 
