@@ -45,7 +45,7 @@ class VisiteurType extends AbstractType
                 'html5' => false,
                 'attr' => ['class' => 'js-datepicker'],
                 ])
-            ->add('total')
+
 
 
         ->add('Envoyer', SubmitType::class)

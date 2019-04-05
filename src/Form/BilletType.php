@@ -32,7 +32,7 @@ class BilletType extends AbstractType
                 ]
             ])
             ->add('datedenaissance', DateType::class)
-            ->add('prix', MoneyType::class)
+
         ;
     }
 

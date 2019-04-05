@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\BilletType;
 use App\Form\VisiteurType;
+use App\Service\TarifGenerator;
 use Doctrine\Common\Persistence\ObjectManager;
 use function Sodium\add;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,13 +41,15 @@ class BlogController extends AbstractController
     /**
      * @Route ("/blog/new", name = "blog_create")
      */
-    public function create(Request $request, ObjectManager $manager)
+    public function create(Request $request, ObjectManager $manager, TarifGenerator $tarif)
     {
-        $billet = new Billet();
-        $form = $this->createForm(VisiteurType::class);
+        $command = new Visiteur();
+        $form = $this->createForm(VisiteurType::class, $command);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             dump($form->getData());
+
+            $tarif->getTarif($command);
 
             $manager->persist($form->getData());
             $manager->flush();
