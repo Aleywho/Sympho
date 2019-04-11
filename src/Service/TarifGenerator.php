@@ -2,15 +2,17 @@
 
 namespace App\Service;
 
+use Doctrine\ORM\Entity;
+use DateTime;
 class TarifGenerator
 {
-    public function getTarif($command, $datedenaissance)
+    public function getTarif($command)
     {
         dump($command);
 
         $now = new \DateTime();
-        $age1 =$datedenaissance->diff($now);
-        $age = $age1;
+        $age1=> $datedenaissance->diff($now);
+        $age = $age1->format('\'%y\'');
 
 
 
