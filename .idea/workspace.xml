@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a55c8aad-e563-4453-bb1d-661cc53a9749" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/TarifGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/TarifGenerator.php" afterDir="false" />
-    </list>
+    <list default="true" id="a55c8aad-e563-4453-bb1d-661cc53a9749" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +42,7 @@
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="4033" />
+          <entry key="PHP" value="4126" />
           <entry key="PLAIN_TEXT" value="45" />
           <entry key="Twig" value="1767" />
           <entry key="YAML" value="2" />
@@ -62,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="185">
-              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="34" />
+              <caret line="45" column="34" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="34" />
               <folding>
                 <element signature="e#34#58#0#PHP" expanded="true" />
               </folding>
@@ -101,8 +98,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Form/VisiteurType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="40" column="40" selection-start-line="36" selection-start-column="19" selection-end-line="40" selection-end-column="40" />
+            <state relative-caret-position="476">
+              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
               <folding>
                 <element signature="e#28#52#0#PHP" expanded="true" />
               </folding>
@@ -125,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Service/TarifGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="40" />
               <folding>
                 <element signature="e#31#55#0#PHP" expanded="true" />
               </folding>
@@ -183,9 +180,9 @@
         <option value="$PROJECT_DIR$/src/Entity/Visiteur.php" />
         <option value="$PROJECT_DIR$/src/Service/tarif.php" />
         <option value="$PROJECT_DIR$/src/Controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/src/Form/VisiteurType.php" />
         <option value="$PROJECT_DIR$/src/Form/BilletType.php" />
         <option value="$PROJECT_DIR$/src/Service/TarifGenerator.php" />
+        <option value="$PROJECT_DIR$/src/Form/VisiteurType.php" />
       </list>
     </option>
   </component>
@@ -461,12 +458,12 @@
       <workItem from="1554465227367" duration="3044000" />
       <workItem from="1554717152385" duration="3081000" />
       <workItem from="1554981528264" duration="5203000" />
-      <workItem from="1555312341098" duration="3547000" />
+      <workItem from="1555312341098" duration="3789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111926000" />
+    <option name="totallyTimeSpent" value="112168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -631,16 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/VisiteurType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="40" selection-start-line="36" selection-start-column="19" selection-end-line="40" selection-end-column="40" />
-          <folding>
-            <element signature="e#28#52#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Form/BilletType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -675,17 +662,27 @@
     <entry file="file://$PROJECT_DIR$/src/Controller/BlogController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="34" />
+          <caret line="45" column="34" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="34" />
           <folding>
             <element signature="e#34#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/TarifGenerator.php">
+    <entry file="file://$PROJECT_DIR$/src/Form/VisiteurType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding>
+            <element signature="e#28#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/TarifGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="40" />
           <folding>
             <element signature="e#31#55#0#PHP" expanded="true" />
           </folding>
