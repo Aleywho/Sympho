@@ -32,6 +32,7 @@ class VisiteurType extends AbstractType
             ->add('email', TextType::class, [
                 'attr' =>[
                     'placeholder'=>"Votre email"
+                    //mettre des options, pour tout, pour éviter que les gens mettent n'importe quoi.
                 ]
             ])
             ->add('billets', CollectionType::class, array(
@@ -39,6 +40,7 @@ class VisiteurType extends AbstractType
                 'entry_options' => array('label' => false),
                 'allow_add' =>true,
                 'by_reference' => false,
+                //mettre des options, pour tout, pour éviter que les gens mettent n'importe quoi.
             ))
             ->add('dateVisit', DateType::class,[
                 'widget' => 'single_text',
