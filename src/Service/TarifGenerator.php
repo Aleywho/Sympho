@@ -21,7 +21,7 @@ if ($difference < 4) {
             $billet = 0;
         } elseif ($difference < 13) {
         $billet = 8;
-        } elseif ($reduction == true) {
+        } elseif ($difference == true) {
         $billet = 10;
         } elseif ($difference > 12 && $difference < 60) {
         $billet = 16;
