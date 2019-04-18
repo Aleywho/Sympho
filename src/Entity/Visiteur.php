@@ -137,6 +137,7 @@ class Visiteur
         if (!$this->billets->contains($billet)) {
             $this->billets[] = $billet;
             $billet->setVisiteur($this);
+            $this ->nbBillet+=1;
         }
 
         return $this;
