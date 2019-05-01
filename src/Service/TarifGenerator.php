@@ -22,6 +22,9 @@ $total = 0;
                 $tarif = 0;
             } elseif ($difference < 12) {
                 $tarif = 8;
+                if($billet->isTarifReduit()) {
+                    $tarif =$billet ::TARIFREDUIT_TARIF;
+                }
             } elseif ($difference > 12 && $difference < 60) {
                 $tarif = 16;
             } else {

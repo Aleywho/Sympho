@@ -54,6 +54,11 @@ class Visiteur
      */
     private $dateVisit;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $TarifReduit;
+
     public function __construct()
     {
         $this->billets = new ArrayCollection();
@@ -164,6 +169,18 @@ class Visiteur
     public function setDateVisit(\DateTimeInterface $dateVisit): self
     {
         $this->dateVisit = $dateVisit;
+
+        return $this;
+    }
+
+    public function getTarifReduit(): ?bool
+    {
+        return $this->TarifReduit;
+    }
+
+    public function setTarifReduit(bool $TarifReduit): self
+    {
+        $this->TarifReduit = $TarifReduit;
 
         return $this;
     }
