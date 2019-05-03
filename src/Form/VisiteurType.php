@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Visiteur;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Entity\Billet;
@@ -20,39 +21,35 @@ class VisiteurType extends AbstractType
     {
         $builder
             ->add('prenom', TextType::class, [
-                'attr' =>[
-                    'placeholder'=>"Votre prénom"
+                'attr' => [
+                    'placeholder' => "Votre prénom"
                 ]
             ])
             ->add('nom', TextType::class, [
-                'attr' =>[
-                    'placeholder'=>"Votre nom"
+                'attr' => [
+                    'placeholder' => "Votre nom"
                 ]
             ])
             ->add('email', TextType::class, [
-                'attr' =>[
-                    'placeholder'=>"Votre email"
+                'attr' => [
+                    'placeholder' => "Votre email"
                     //mettre des options, pour tout, pour éviter que les gens mettent n'importe quoi.
                 ]
             ])
             ->add('billets', CollectionType::class, array(
                 'entry_type' => BilletType::class,
                 'entry_options' => array('label' => false),
-                'allow_add' =>true,
+                'allow_add' => true,
                 'by_reference' => false,
                 //mettre des options, pour tout, pour éviter que les gens mettent n'importe quoi.
             ))
-            ->add('dateVisit', DateType::class,[
+            ->add('dateVisit', DateType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
                 'attr' => ['class' => 'js-datepicker'],
-                ])
+            ])
 
-
-
-        ->add('Envoyer', SubmitType::class)
-
-        ;
+            ->add('Envoyer', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

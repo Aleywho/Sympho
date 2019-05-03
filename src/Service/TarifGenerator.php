@@ -9,28 +9,25 @@ class TarifGenerator
 {
     public function getTarif($command)
     {
-        dump($command);
-
         $now = new \DateTime();
-$total = 0;
+        $total = 0;
         foreach ($command->getBillets() as $billet) {
             $datedenaissance = $billet->getDatedenaissance()->diff($now);
             $difference = $datedenaissance->y;
             dump($difference);
             $tarif = 0;
             if ($difference < 4) {
-                $tarif = 0;
+                $tarif = $billet::TARIF_ENFANT;
             } elseif ($difference < 12) {
-                $tarif = 8;
-                if($billet->isTarifReduit()) {
-                    $tarif =$billet ::TARIFREDUIT_TARIF;
-                }
+                $tarif = $billet::TARIF_ADO;
+            } elseif ($billet->getTarifReduit()) {
+                $tarif = $billet::TARIF_REDUIT;
             } elseif ($difference > 12 && $difference < 60) {
-                $tarif = 16;
+                $tarif = $billet::TARIF_NORMAL;
             } else {
-                $tarif = 12;
+                $tarif = $billet::TARIF_SENIOR;
             }
-            $total+=$tarif;
+            $total += $tarif;
             $billet->setPrix($tarif);
         }
         $command->setTotal($total);

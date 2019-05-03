@@ -9,6 +9,11 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Billet
 {
+    const TARIF_REDUIT = 10;
+    const TARIF_ENFANT = 0;
+    const TARIF_ADO = 8;
+    const TARIF_SENIOR = 12;
+    const TARIF_NORMAL=16;
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -41,6 +46,10 @@ class Billet
      * @ORM\Column(type="float")
      */
     private $prix;
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $tarifReduit;
 
     public function getId(): ?int
     {
@@ -103,6 +112,17 @@ class Billet
     public function setPrix(float $prix): self
     {
         $this->prix = $prix;
+
+        return $this;
+    }
+    public function getTarifReduit(): ?bool
+    {
+        return $this->tarifReduit;
+    }
+
+    public function setTarifReduit(bool $tarifReduit): self
+    {
+        $this->tarifReduit = $tarifReduit;
 
         return $this;
     }

@@ -54,10 +54,7 @@ class Visiteur
      */
     private $dateVisit;
 
-    /**
-     * @ORM\Column(type="boolean")
-     */
-    private $TarifReduit;
+
 
     public function __construct()
     {
@@ -142,7 +139,7 @@ class Visiteur
         if (!$this->billets->contains($billet)) {
             $this->billets[] = $billet;
             $billet->setVisiteur($this);
-            $this ->nbBillet+=1;
+            $this->nbBillet += 1;
         }
 
         return $this;
@@ -173,15 +170,5 @@ class Visiteur
         return $this;
     }
 
-    public function getTarifReduit(): ?bool
-    {
-        return $this->TarifReduit;
-    }
 
-    public function setTarifReduit(bool $TarifReduit): self
-    {
-        $this->TarifReduit = $TarifReduit;
-
-        return $this;
-    }
 }

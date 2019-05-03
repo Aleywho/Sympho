@@ -54,7 +54,10 @@ class BlogController extends AbstractController
             $manager->persist($form->getData());
             $manager->flush();
 
-            return $this->redirectToRoute('blog_show');
+            //Redirige vers la route order en lui passant l'ID $command->getId())
+            return $this->redirectToRoute('order',[
+                'id' => $command->getId(),
+                ]);
         }
         return $this->render('blog/create.html.twig', [
             'formBillet' => $form->createView(),
@@ -63,12 +66,13 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @route("/blog/article/12", name="blog_show")
+     * @route("/order/{id}", name="order")
      */
+
 
     public function show()
     {
-        return $this->render('blog/show.html.twig');
+        return $this->render('blog/order.html.twig');
     }
 
 }
