@@ -29,7 +29,7 @@ class Billet
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nom;
+    private $nom;
 
     /**
      * @ORM\Column(type="date")
@@ -70,12 +70,12 @@ class Billet
 
     public function getNom(): ?string
     {
-        return $this->Nom;
+        return $this->nom;
     }
 
     public function setNom(string $Nom): self
     {
-        $this->Nom = $Nom;
+        $this->nom = $Nom;
 
         return $this;
     }

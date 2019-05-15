@@ -21,7 +21,7 @@ class Visiteur
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Prenom;
+    private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -68,12 +68,12 @@ class Visiteur
 
     public function getPrenom(): ?string
     {
-        return $this->Prenom;
+        return $this->prenom;
     }
 
-    public function setPrenom(string $Prenom): self
+    public function setPrenom(string $prenom): self
     {
-        $this->Prenom = $Prenom;
+        $this->prenom = $prenom;
 
         return $this;
     }

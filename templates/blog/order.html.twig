@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<h1>Récapitulatif</h1>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+
+
+        <tr>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Date de naissance</th>
+            <th>Type de billet</th>
+            <th>Prix</th>
+        </tr>
+
+        </thead>
+
+        {% for billet in infos.billets %}
+            <tr>
+                <td>{{ billet.prenom }}</td>
+                <td>{{ billet.nom }}</td>
+                <td>{{ billet.datedenaissance|date('d/m/Y') }}</td>
+                {% if billet.tarifReduit == false %}
+                    <td>Tarif normal</td>
+                {% else  %}
+                    <td>Tarif réduit</td>
+                {% endif %}
+                <td>{{ billet.prix }}</td>
+
+            </tr>
+        {% endfor %}
+
+        <thead>
+
+        <tr>
+
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Date de visite</th>
+            <th>Total</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+            <td>{{ infos.prenom }}</td>
+            <td>{{ infos.nom }}</td>
+            <td>{{ infos.email }}</td>
+            <td>{{ infos.dateVisit|date('d/m/Y') }}</td>
+            <td>{{ infos.total }}</td>
+
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+
+ //balise src
+
+
+{% endblock %}

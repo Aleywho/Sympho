@@ -55,9 +55,9 @@ class BlogController extends AbstractController
             $manager->flush();
 
             //Redirige vers la route order en lui passant l'ID $command->getId())
-            return $this->redirectToRoute('order',[
+            return $this->redirectToRoute('order', [
                 'id' => $command->getId(),
-                ]);
+            ]);
         }
         return $this->render('blog/create.html.twig', [
             'formBillet' => $form->createView(),
@@ -70,9 +70,18 @@ class BlogController extends AbstractController
      */
 
 
-    public function show()
+    public function show($id)
     {
-        return $this->render('blog/order.html.twig');
+        $command = $this->getDoctrine()
+            ->getRepository(Visiteur::class)
+            ->find($id);
+        if (!$command) {
+            throw $this->createNotFoundException('Pas de commande trouvée' . $id
+            );
+        }
+        return $this->render('blog/order.html.twig',[
+        'infos' => $command
+        ]);
     }
 
 }
