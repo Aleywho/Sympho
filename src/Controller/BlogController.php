@@ -79,9 +79,19 @@ class BlogController extends AbstractController
             throw $this->createNotFoundException('Pas de commande trouvée' . $id
             );
         }
-        return $this->render('blog/order.html.twig',[
-        'infos' => $command
+        return $this->render('blog/order.html.twig', [
+            'infos' => $command
         ]);
     }
 
+    /**
+     * @route("/sucess/{id}", name="sucess")
+     */
+
+    public function sucess($id)
+    {
+        return $this->render('blog/sucess.html.twig', [
+            'id' => $id
+        ]);
+    }
 }
