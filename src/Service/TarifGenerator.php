@@ -31,12 +31,8 @@ class TarifGenerator
             $billet->setPrix($tarif);
         }
         $command->setTotal($total);
-//modifier rajouter, tarif réduit, et entity tarif réduit
-        //On compare now, avec date de naissance et obtient de le nombre d'année de diffèrence, if else
-        //Une fois qu'on a trouvé le tarif avec if else, on appelle la méthode  $billet -> setPrix($rezul)
-    }
-    // $rez = 4;
 
-    //Fixer le total, grace à la méthode setTotal()$command->setTotal();
+    }
+
 
 }

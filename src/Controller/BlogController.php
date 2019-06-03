@@ -18,6 +18,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
+
 class BlogController extends AbstractController
 {
     /**
@@ -25,6 +26,7 @@ class BlogController extends AbstractController
      */
     public function index()
     {
+
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
         ]);
@@ -33,10 +35,20 @@ class BlogController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home()
+    public function home(\Swift_Mailer $mailer)
     {
+        dump($mailer);
+        $message = (new \Swift_Message('Hello Email'))
+            ->setFrom('send@example.com')
+            ->setTo('alexcurot@hotmail.com')
+            ->setBody("La commande a bien été prise en compte")
+
+        ;
+
+        $mailer->send($message);
         return $this->render('blog/home.html.twig', ['title' => "bienvenue sur la billeterie"]);
     }
+    //Créer un service mail, perso ! Comme TarifGener. (Regarde sur la doc si tu pèches )
 
     /**
      * @Route ("/blog/new", name = "blog_create")
