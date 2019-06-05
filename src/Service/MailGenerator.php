@@ -7,8 +7,25 @@ use Doctrine\ORM\Entity;
 
 class MailGenerator
 {
+    private  $mailer;
+    private $environment;
+
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $environment)
+    {
+        $this ->mailer = $mailer;
+        $this ->environment =$environment;
+    }
+
+
     public function getMail($mailer, $command)
     {
+
+     $message = (new \Swift_Message('Merci de la commande'))
+         ->setFrom('alexandrecurot@gmail.com')
+
+         ->setTo($command ->getEmail())
+     ->setBody($this->environment->render('mailGenerator.html.twig'));
+
 
 
     }

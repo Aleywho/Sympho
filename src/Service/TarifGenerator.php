@@ -6,6 +6,7 @@ use Doctrine\ORM\Entity;
 use DateTime;
 
 class TarifGenerator
+
 {
     public function getTarif($command)
     {
