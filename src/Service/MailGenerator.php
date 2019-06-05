@@ -10,6 +10,7 @@ class MailGenerator
     public function getMail($mailer, $command)
     {
 
+
     }
 
 
