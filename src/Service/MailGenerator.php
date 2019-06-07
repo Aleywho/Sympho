@@ -17,16 +17,16 @@ class MailGenerator
     }
 
 
-    public function getMail($mailer, $command)
+    public function sendMail($command)
     {
 
      $message = (new \Swift_Message('Merci de la commande'))
          ->setFrom('alexandrecurot@gmail.com')
 
          ->setTo($command ->getEmail())
-     ->setBody($this->environment->render('mailGenerator.html.twig'));
+     ->setBody($this->environment->render('blog/mailGenerator.html.twig', ['infos'=>$command]), 'text/html' ) ;
 
-
+        return $this->mailer->send($message) > 0;
 
     }
 

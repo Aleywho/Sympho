@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\BilletType;
 use App\Form\VisiteurType;
+use App\Service\MailGenerator;
 use App\Service\TarifGenerator;
 use Doctrine\Common\Persistence\ObjectManager;
 use function Sodium\add;
@@ -35,17 +36,9 @@ class BlogController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function home(\Swift_Mailer $mailer)
+    public function home(MailGenerator $mailGenerator)
     {
-        dump($mailer);
-        $message = (new \Swift_Message('Hello Email'))
-            ->setFrom('send@example.com')
-            ->setTo('alexcurot@hotmail.com')
-            ->setBody("La commande a bien été prise en compte")
 
-        ;
-
-        $mailer->send($message);
         return $this->render('blog/home.html.twig', ['title' => "bienvenue sur la billeterie"]);
     }
     //Créer un service mail, perso ! Comme TarifGener. (Regarde sur la doc si tu pèches )
@@ -82,7 +75,7 @@ class BlogController extends AbstractController
      */
 
 
-    public function show($id)
+    public function show($id, MailGenerator $mailGenerator)
     {
         $command = $this->getDoctrine()
             ->getRepository(Visiteur::class)
@@ -91,6 +84,8 @@ class BlogController extends AbstractController
             throw $this->createNotFoundException('Pas de commande trouvée' . $id
             );
         }
+        $mailGenerator ->sendMail($command);
+
         return $this->render('blog/order.html.twig', [
             'infos' => $command
         ]);

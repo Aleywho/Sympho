@@ -1,6 +1,5 @@
-{% extends 'base.html.twig' %}
 
-
+{% block body %}
 <h2>BON DE COMMANDE N°{{ infos.id }} pour le {{infos.dateVisit|date('d-m-Y') }}</h2>
 
 
@@ -18,7 +17,7 @@ France<br>
 <img src = "http://louvre-billetterie.romaingravier.fr/Images/logo.png" width = "150px" height = "150px" />
 <h2 style = "margin: 20px 20px">numéro de réservation: {{ infos.id }}</h2>
 <h2 style = "margin: 20px 20px">Tarif: {{ infos.total }}€</h2>
-<h2>Date: {{ indos.dateVisit|date('d/m/Y') }}</h2>
+<h2>Date: {{ infos.dateVisit|date('d/m/Y') }}</h2>
 
 </div>
 
@@ -27,6 +26,6 @@ France<br>
     <h2>Nom: {{ infos.nom }}</h2>
     <h2>Prénom: {{ infos.prenom }}</h2>
 
+</div>
 
-{% block body %}
 {% endblock %}
