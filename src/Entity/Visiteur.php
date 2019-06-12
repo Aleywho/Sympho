@@ -5,12 +5,31 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VisiteurRepository")
  */
 class Visiteur
 {
+    /**
+     * @Assert\Callback
+     */
+
+
+    private $visitTime;
+
+    public function Validation(ExecutionContextInterface $context, $payload)
+    {
+$wrongHours = [''];
+        if (in_array($this->getVisitTime(), $wrongHours)) {
+            $context->buildViolation('This name sounds totally fake!')
+                ->atPath('firstName')
+                ->addViolation();
+        }
+    }
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -34,7 +53,7 @@ class Visiteur
     private $Email;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", )
      */
     private $total;
 
@@ -53,7 +72,6 @@ class Visiteur
      * @ORM\Column(type="datetime")
      */
     private $dateVisit;
-
 
 
     public function __construct()
@@ -160,6 +178,7 @@ class Visiteur
 
     public function getDateVisit(): ?\DateTimeInterface
     {
+
         return $this->dateVisit;
     }
 

@@ -1,31 +1,32 @@
-
 {% block body %}
 <h2>BON DE COMMANDE N°{{ infos.id }} pour le {{infos.dateVisit|date('d-m-Y') }}</h2>
 
+    <div id = "mailBody" style = "text-align: center">
 
+        <h2>Nom: {{ infos.nom }}</h2>
+        <h2>Prénom: {{ infos.prenom }}</h2>
+
+    </div>
 <br>
 <br>
-<br>
-Pour toutes demandes complémentaires, merci de contacter le service client du musée du Louvre<br>
-<br>
-Musée du Louvre<br>
-Rue de Rivoli<br>
-75001 Paris<br>
-France<br>
+
 <br>
 <div id = "mailHeader" style ="display: flex">
 <img src = "http://louvre-billetterie.romaingravier.fr/Images/logo.png" width = "150px" height = "150px" />
 <h2 style = "margin: 20px 20px">numéro de réservation: {{ infos.id }}</h2>
-<h2 style = "margin: 20px 20px">Tarif: {{ infos.total }}€</h2>
-<h2>Date: {{ infos.dateVisit|date('d/m/Y') }}</h2>
+    <br>
+    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
+    <br/><br/>
+<h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
 
-</div>
+    <br>
+    Pour toutes demandes complémentaires, merci de contacter le service client du musée du Louvre<br>
+    <br>
+    Musée du Louvre<br>
+    Rue de Rivoli<br>
+    75001 Paris<br>
+    France<br>
+    {% block stylesheets %}
 
-<div id = "mailBody" style = "text-align: center">
-
-    <h2>Nom: {{ infos.nom }}</h2>
-    <h2>Prénom: {{ infos.prenom }}</h2>
-
-</div>
-
+    {% endblock %}
 {% endblock %}
