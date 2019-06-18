@@ -13,22 +13,8 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
  */
 class Visiteur
 {
-    /**
-     * @Assert\Callback
-     */
 
 
-    private $visitTime;
-
-    public function Validation(ExecutionContextInterface $context, $payload)
-    {
-$wrongHours = [''];
-        if (in_array($this->getVisitTime(), $wrongHours)) {
-            $context->buildViolation('This name sounds totally fake!')
-                ->atPath('firstName')
-                ->addViolation();
-        }
-    }
 
     /**
      * @ORM\Id()
@@ -70,9 +56,20 @@ $wrongHours = [''];
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Callback
      */
+
     private $dateVisit;
 
+    public function Validation(ExecutionContextInterface $context, $wrongHours)
+    {
+
+        if (in_array($this->getDateVisit(), $wrongHours)) {
+            $context->buildViolation('This name sounds totally fake!')
+                ->atPath('firstName')
+                ->addViolation();
+        }
+    }
 
     public function __construct()
     {
