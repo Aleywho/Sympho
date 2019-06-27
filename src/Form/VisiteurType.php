@@ -6,6 +6,7 @@ use App\Entity\Visiteur;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use App\Entity\Billet;
@@ -48,7 +49,14 @@ class VisiteurType extends AbstractType
                 'html5' => false,
                 'attr' => ['class' => 'js-datepicker'],
             ])
+//Ajouter le type de billet ChoiceType::class
+                ->add('type', ChoiceType::class,[
+                    'choices' =>[
+                        'demi-journée' =>false,
+                        'journée' =>true,
+                    ]
 
+            ])
             ->add('Envoyer', SubmitType::class);
     }
 

@@ -41,13 +41,13 @@ class BlogController extends AbstractController
 
         return $this->render('blog/home.html.twig', ['title' => "bienvenue sur la billeterie"]);
     }
-    //Créer un service mail, perso ! Comme TarifGener. (Regarde sur la doc si tu pèches )
 
     /**
      * @Route ("/blog/new", name = "blog_create")
      */
     public function create(Request $request, ObjectManager $manager, TarifGenerator $tarif)
     {
+        dump(date('G'));
         $command = new Visiteur();
         $form = $this->createForm(VisiteurType::class, $command);
         $form->handleRequest($request);
@@ -59,7 +59,6 @@ class BlogController extends AbstractController
             $manager->persist($form->getData());
             $manager->flush();
 
-            //Redirige vers la route order en lui passant l'ID $command->getId())
             return $this->redirectToRoute('order', [
                 'id' => $command->getId(),
             ]);

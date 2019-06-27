@@ -9,6 +9,7 @@
 
 
         <tr>
+            <th scope="col">Billet</th>
             <th>Prénom</th>
             <th>Nom</th>
             <th>Date de naissance</th>
@@ -19,7 +20,6 @@
         </thead>
 
         {% for billet in infos.billets %}
-            <h1>Billet </h1>
 
             <tr>
                 <td>{{ billet.prenom }}</td>
@@ -36,9 +36,9 @@
         {% endfor %}
 
         <thead>
-<h1>Commande! </h1>
-        <tr>
 
+        <tr>
+            <th scope="col">Commande</th>
             <th>Prénom</th>
             <th>Nom</th>
             <th>Email</th>

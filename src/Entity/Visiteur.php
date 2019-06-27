@@ -56,17 +56,33 @@ class Visiteur
 
     /**
      * @ORM\Column(type="datetime")
-     * @Assert\Callback
      */
 
     private $dateVisit;
 
-    public function Validation(ExecutionContextInterface $context, $wrongHours)
-    {
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $type;
 
-        if (in_array($this->getDateVisit(), $wrongHours)) {
-            $context->buildViolation('This name sounds totally fake!')
-                ->atPath('firstName')
+    /**
+     * @Assert\Callback
+     */
+
+    public function Validation(ExecutionContextInterface $context, $payload)
+    {
+        $currentHour = date('G');
+        $now = new \DateTime();
+// 1 on vérifie le type de billet (Journée/demi journée) -> $this ->getType(True ou false) (Done)
+        // 2 ET comparé l'heure actuelle avec 14!!!!! (Done)
+        // 3 ET regarder la date de la commande aujourd'hui !
+        //IF(condition n'1 && condition n'2 && condition n'3) Si on a les trois conditions = ERREURS
+       if ($this->getType() && ($currentHour>14) &&($this->getDateVisit()->diff($now)->d==0))
+        {
+
+
+            $context->buildViolation('Mauvaise horaire')
+                ->atPath('dateVisit')
                 ->addViolation();
         }
     }
@@ -182,6 +198,18 @@ class Visiteur
     public function setDateVisit(\DateTimeInterface $dateVisit): self
     {
         $this->dateVisit = $dateVisit;
+
+        return $this;
+    }
+
+    public function getType(): ?bool
+    {
+        return $this->type;
+    }
+
+    public function setType(bool $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

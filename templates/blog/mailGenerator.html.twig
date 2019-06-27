@@ -1,7 +1,7 @@
 {% block body %}
 <h2>BON DE COMMANDE N°{{ infos.id }} pour le {{infos.dateVisit|date('d-m-Y') }}</h2>
 
-    <div id = "mailBody" style = "text-align: center">
+    <div id = "mailBody" style = "text-align: left">
 
         <h2>Nom: {{ infos.nom }}</h2>
         <h2>Prénom: {{ infos.prenom }}</h2>
@@ -11,11 +11,10 @@
 <br>
 <div id = "mailHeader" style ="display: flex">
 <img src = "http://louvre-billetterie.romaingravier.fr/Images/logo.png" width = "150px" height = "150px" />
-<h2 style = "margin: 20px 20px">numéro de réservation: {{ infos.id }}</h2>
     <br>
-    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
     <br/><br/>
-<h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
+    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
+    <h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
 
     <br>
     Pour toutes demandes complémentaires, merci de contacter le service client du musée du Louvre<br>
@@ -26,3 +25,60 @@
     France<br>
 
 {% endblock %}
+
+
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Billet</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Date de naissance</th>
+        <th scope="col">Type de billet</th>
+        <th scope="col">Prix</th>
+
+
+    </tr>
+    </thead>
+    {% for billet in infos.billets %}
+
+    <tr>
+        <th scope="row">1</th>
+        <td>{{ billet.prenom }}</td>
+        <td>{{ billet.nom }}</td>
+        <td>{{ billet.datedenaissance|date('d/m/Y') }}</td>
+        {% if billet.tarifReduit == false %}
+            <td>Tarif normal</td>
+        {% else  %}
+            <td>Tarif réduit</td>
+        {% endif %}
+        <td>{{ billet.prix }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Commande</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Date de visite</th>
+        <th scope="col">Total</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>{{ infos.prenom }}</td>
+        <td>{{ infos.nom }}</td>
+        <td>{{ infos.email }}</td>
+        <td>{{ infos.dateVisit|date('d/m/Y') }}</td>
+        <td>{{ infos.total }}</td>
+    </tr>
+
+    </tbody>
+</table>
