@@ -22,6 +22,7 @@
         {% for billet in infos.billets %}
 
             <tr>
+                <td>{{ billet.id }}</td>
                 <td>{{ billet.prenom }}</td>
                 <td>{{ billet.nom }}</td>
                 <td>{{ billet.datedenaissance|date('d/m/Y') }}</td>
@@ -49,7 +50,7 @@
         </thead>
         <tbody>
         <tr>
-
+            <td>{{ infos.id }}</td>
             <td>{{ infos.prenom }}</td>
             <td>{{ infos.nom }}</td>
             <td>{{ infos.email }}</td>

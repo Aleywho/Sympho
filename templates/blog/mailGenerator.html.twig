@@ -1,28 +1,7 @@
 {% block body %}
 <h2>BON DE COMMANDE N°{{ infos.id }} pour le {{infos.dateVisit|date('d-m-Y') }}</h2>
 
-    <div id = "mailBody" style = "text-align: left">
 
-        <h2>Nom: {{ infos.nom }}</h2>
-        <h2>Prénom: {{ infos.prenom }}</h2>
-
-    </div>
-
-<br>
-<div id = "mailHeader" style ="display: flex">
-<img src = "http://louvre-billetterie.romaingravier.fr/Images/logo.png" width = "150px" height = "150px" />
-    <br>
-    <br/><br/>
-    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
-    <h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
-
-    <br>
-    Pour toutes demandes complémentaires, merci de contacter le service client du musée du Louvre<br>
-    <br>
-    Musée du Louvre<br>
-    Rue de Rivoli<br>
-    75001 Paris<br>
-    France<br>
 
 {% endblock %}
 
@@ -82,3 +61,13 @@
 
     </tbody>
 </table>
+    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
+<h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
+
+<br>
+Pour toutes demandes complémentaires, merci de contacter le service client du musée du Louvre<br>
+<br>
+Musée du Louvre<br>
+Rue de Rivoli<br>
+75001 Paris<br>
+France<br>
