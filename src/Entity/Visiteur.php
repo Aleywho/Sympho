@@ -81,7 +81,7 @@ class Visiteur
         {
 
 
-            $context->buildViolation('Mauvaise horaire')
+            $context->buildViolation('Vous ne pouvez pas commander à cette heure-ci!')
                 ->atPath('dateVisit')
                 ->addViolation();
         }
