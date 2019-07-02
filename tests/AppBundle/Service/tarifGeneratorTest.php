@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class TarifGeneratorTest extends TestCase
 {
-    public function TestAdd()
+    public function TestgetTarif()
     {
         $TarifGenerator = new TarifGenerator();
     }

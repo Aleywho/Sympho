@@ -2,7 +2,7 @@
 <h2>BON DE COMMANDE N°{{ infos.id }} pour le {{infos.dateVisit|date('d-m-Y') }}</h2>
 
 
-
+    <img src = "http://louvre-billetterie.romaingravier.fr/Images/logo.png" width = "150px" height = "150px" />
 {% endblock %}
 
 
@@ -38,7 +38,7 @@
 </table>
 
 <table class="table">
-    <thead class="thead-light">
+    <thead class="thead-dark">
     <tr>
         <th scope="col">Commande</th>
         <th scope="col">Prénom</th>
@@ -61,7 +61,7 @@
 
     </tbody>
 </table>
-    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2></div>
+    <h2 style= "font-size : 18px; font-weight : bold;">Le total de votre commande est de {{ infos.total }} euros</h2>
 <h2>Date de visite: {{ infos.dateVisit|date('d/m/Y') }}</h2>
 
 <br>
