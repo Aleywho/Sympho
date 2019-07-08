@@ -13,9 +13,6 @@ use Symfony\Component\Validator\Context\ExecutionContextInterface;
  */
 class Visiteur
 {
-
-
-
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

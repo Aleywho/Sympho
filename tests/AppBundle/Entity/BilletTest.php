@@ -7,10 +7,9 @@ use PHPUnit\Framework\TestCase;
 
 class BilletTest extends TestCase
 {
-    public function testbillet()
+    public function testsetTarifReduit()
     {
-        $billet = new Billet();
-
-        $this->assertSame(1.1, $billet->Billet());
+        $billet= new Billet('un tarif', Billet::TARIF_NORMAL,2.0625 );
+        $this->assertSame(33, $billet->getTarifReduit());
     }
 }
