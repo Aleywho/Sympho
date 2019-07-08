@@ -66,7 +66,7 @@ class Visiteur
      * @Assert\Callback
      */
 
-    public function Validation(ExecutionContextInterface $context, $payload)
+    public function validation(ExecutionContextInterface $context, $payload)
     {
         $currentHour = date('G');
         $now = new \DateTime();
@@ -84,6 +84,14 @@ class Visiteur
         }
     }
 
+    /**
+     * @Assert\Callback
+     */
+
+    public function holiday(ExecutionContextInterface $context, $payload)
+    {
+
+    }
     public function __construct()
     {
         $this->billets = new ArrayCollection();

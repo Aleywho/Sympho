@@ -15,7 +15,6 @@ class TarifGenerator
         foreach ($command->getBillets() as $billet) {
             $datedenaissance = $billet->getDatedenaissance()->diff($now);
             $difference = $datedenaissance->y;
-            dump($difference);
             $tarif = 0;
             if ($difference < 4) {
                 $tarif = $billet::TARIF_ENFANT;

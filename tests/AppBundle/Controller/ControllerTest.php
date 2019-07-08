@@ -7,12 +7,23 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ControllerTest extends WebTestCase
 {
-public function testCreate()
-{
-$client = static::createClient();
+    //test de route fonctionel
+    public function testHome()
+    {
+        $client = static::createClient();
 
-$client->request('GET', '/post/create');
+        $client->request('GET', '/');
 
-$this->assertEquals(404, $client->getResponse()->getStatusCode());
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+    }
+// test de route inexistante
+    public function testnoPage()
+    {
+        $client = static::createClient();
+
+        $client->request('GET', '/abc');
+
+        $this->assertEquals(404, $client->getResponse()->getStatusCode());
+    }
 }
-}
+
